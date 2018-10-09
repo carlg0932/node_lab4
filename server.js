@@ -32,6 +32,8 @@ app.get('/', function (req, res) {
     res.send('Welcome to Data Representation & Querying');
 })
 
+//app.get = get method (read)
+//app.post = post method (write)
 app.get('/hello/:name', function (req, res) {
     console.log(req.params.name);
     res.send('Hello ' + req.params.name);
@@ -49,8 +51,6 @@ var server = app.listen(8081, function () {
 
 app.get("/api/posts", (req, res) => {
     const posts = [
-        {
-            "posts": [
                 {
                     "id": "fadf12421l",
                     "title": "First server-side post",
@@ -62,9 +62,7 @@ app.get("/api/posts", (req, res) => {
                     "content": "This is coming from the server!"
                 }
             ]
-        }
-    ];
-    res.status(200).json({ posts: posts }); //response of data
+    res.json({ mk: posts }); //response of data
 }
 );          
 
